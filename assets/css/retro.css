@@ -545,6 +545,30 @@ code { background: var(--cream); border: 1px solid var(--ink); padding: 0 4px; f
 }
 .pcta .lead { margin-bottom: 18px; }
 
+/* ============================================================
+   BLOG / DEVLOG
+   ============================================================ */
+.blog-content { font-size: 22px; line-height: 1.55; }
+.blog-content h1 { font-family: var(--font-display); font-size: 20px; margin-bottom: 18px; }
+.blog-content h2 { font-family: var(--font-display); font-size: 14px; margin: 28px 0 14px; color: var(--grape); }
+.blog-content h3 { font-family: var(--font-display); font-size: 11px; margin: 22px 0 12px; }
+.blog-content p { margin-bottom: 14px; }
+.blog-content ul, .blog-content ol { margin: 0 0 14px 24px; }
+.blog-content li { margin-bottom: 6px; }
+.blog-content strong { color: var(--lime-deep); }
+.blog-content em { font-style: normal; border-bottom: 2px solid var(--grape); }
+.blog-content a { color: var(--grape); border-bottom: 2px solid transparent; }
+.blog-content a:hover { border-color: var(--grape); }
+.blog-content code { background: var(--cream); border: 2px solid var(--ink); padding: 1px 6px; font-family: var(--font-body); font-size: 19px; }
+.blog-content pre { background: var(--ink); color: var(--lime); border: 3px solid var(--ink); padding: 18px; overflow-x: auto; margin-bottom: 14px; box-shadow: var(--shadow-sm); }
+.blog-content pre code { background: none; border: none; padding: 0; color: var(--lime); }
+.blog-content blockquote { border-left: 5px solid var(--grape); padding-left: 16px; color: var(--ink-soft); margin-bottom: 14px; }
+.blog-content hr { border: none; border-top: 3px dashed var(--ink-soft); margin: 28px 0; }
+
+.blog-post-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+.blog-date { font-family: var(--font-display); font-size: 8px; color: var(--ink-soft); margin-bottom: 10px; }
+.blog-tag { font-family: var(--font-display); font-size: 8px; color: var(--lime); background: var(--ink); border: 2px solid var(--lime-deep); padding: 3px 8px; }
+
 /* konami secret mode */
 body.rainbow { animation: hue 6s linear infinite; }
 @keyframes hue { from { filter: hue-rotate(0deg); } to { filter: hue-rotate(360deg); } }

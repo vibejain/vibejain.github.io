@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEVLOG — Vaibhav</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/retro.css" />
+</head>
+<body id="top">
+  <div class="progress" aria-hidden="true"><div class="progress__fill" id="progressFill"></div></div>
+  <canvas id="pollen" class="pollen" aria-hidden="true"></canvas>
+
+  <header class="pnav">
+    <a href="index.html" class="pnav__back">&#9664; ALL POSTS</a>
+    <div class="pnav__audio">
+      <button id="musicBtn" class="ghud__btn" title="Music">&#9834;</button>
+      <button id="sfxBtn" class="ghud__btn" title="Sound effects">SFX</button>
+    </div>
+  </header>
+
+  <main class="pdetail">
+    <section id="postMeta" class="phero" style="display:none;">
+      <span class="pcat reveal" id="postTag">POST</span>
+      <p class="muted reveal" data-delay="1" id="postDate" style="font-family:var(--font-display);font-size:9px;margin-bottom:16px;"></p>
+    </section>
+
+    <div id="postBody" class="card blog-content reveal" style="margin-top:10px;">
+      <p class="muted">Loading...</p>
+    </div>
+
+    <div class="pcta reveal" style="margin-top:40px;">
+      <p class="lead">Want to work together on something like this?</p>
+      <a href="https://instagram.com/vaibhavjain.tech" target="_blank" rel="noopener" class="btn btn--ig">&#9654; DM @vaibhavjain.tech</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="index.html" class="pnav__back">&#9664; ALL POSTS</a>
+    <p>&copy; <span id="year"></span> Vaibhav — AI Solutions Engineer.</p>
+    <button id="crtToggle" class="footer__toggle" title="Toggle CRT scanlines">CRT: ON</button>
+  </footer>
+
+  <div class="scanlines" id="scanlines" aria-hidden="true"></div>
+  <script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+  <script src="../assets/js/audio.js"></script>
+  <script src="../assets/js/project.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const slug = params.get('post');
+
+    if (!slug) {
+      document.getElementById('postBody').innerHTML = '<p class="muted">No post specified. <a href="index.html">Back to DEVLOG</a></p>';
+    } else {
+      // Load post metadata for tag/date, then load markdown
+      Promise.all([
+        fetch('posts.json').then(r => r.json()).catch(() => []),
+        fetch('posts/' + encodeURIComponent(slug) + '.md').then(r => {
+          if (!r.ok) throw new Error('Not found');
+          return r.text();
+        })
+      ]).then(([posts, md]) => {
+        const meta = posts.find(p => p.slug === slug);
+
+        if (meta) {
+          document.title = meta.title + ' — Vaibhav DEVLOG';
+          document.getElementById('postTag').textContent = meta.tag || 'POST';
+          document.getElementById('postDate').textContent = meta.date;
+          document.getElementById('postMeta').style.display = '';
+        }
+
+        document.getElementById('postBody').innerHTML = marked.parse(md);
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+      }).catch(() => {
+        document.getElementById('postBody').innerHTML =
+          '<p class="muted">Post not found. <a href="index.html">Back to DEVLOG</a></p>';
+      });
+    }
+  </script>
+</body>
+</html>

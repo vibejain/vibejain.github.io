@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEVLOG — Vaibhav</title>
+  <meta name="description" content="Field notes on AI engineering, building production systems, and shipping real work." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/retro.css" />
+</head>
+<body id="top">
+  <div class="progress" aria-hidden="true"><div class="progress__fill" id="progressFill"></div></div>
+  <canvas id="pollen" class="pollen" aria-hidden="true"></canvas>
+
+  <header class="pnav">
+    <a href="../index.html" class="pnav__back">&#9664; BACK TO WORLD</a>
+    <div class="pnav__audio">
+      <button id="musicBtn" class="ghud__btn" title="Music">&#9834;</button>
+      <button id="sfxBtn" class="ghud__btn" title="Sound effects">SFX</button>
+    </div>
+  </header>
+
+  <main class="pdetail">
+    <section class="phero">
+      <span class="pcat reveal">FIELD NOTES</span>
+      <h1 class="ptitle reveal" data-delay="1">DEVLOG</h1>
+      <p class="pone reveal" data-delay="2">Thoughts on AI engineering, building production systems, and shipping real work.</p>
+    </section>
+
+    <div id="postList" style="display:grid;gap:22px;margin-top:10px;">
+      <div class="card"><p class="muted">Loading posts...</p></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="../index.html" class="pnav__back">&#9664; BACK TO WORLD</a>
+    <p>&copy; <span id="year"></span> Vaibhav — AI Solutions Engineer.</p>
+    <button id="crtToggle" class="footer__toggle" title="Toggle CRT scanlines">CRT: ON</button>
+  </footer>
+
+  <div class="scanlines" id="scanlines" aria-hidden="true"></div>
+  <script src="../assets/js/audio.js"></script>
+  <script src="../assets/js/project.js"></script>
+  <script>
+    fetch('posts.json')
+      .then(r => r.json())
+      .then(posts => {
+        const list = document.getElementById('postList');
+        if (!posts.length) {
+          list.innerHTML = '<div class="card"><p class="muted">No posts yet — check back soon.</p></div>';
+          return;
+        }
+        list.innerHTML = posts
+          .slice().sort((a, b) => new Date(b.date) - new Date(a.date))
+          .map(p => `
+            <a class="card blog-post-card" href="post.html?post=${encodeURIComponent(p.slug)}" style="text-decoration:none;color:inherit;">
+              <div class="project__meta">
+                <span class="blog-date">&#11042; ${p.date}</span>
+                <span class="blog-tag">${p.tag || 'POST'}</span>
+              </div>
+              <h3 style="font-family:var(--font-display);font-size:13px;margin-bottom:12px;">${p.title}</h3>
+              <p style="flex:1;margin-bottom:14px;">${p.summary}</p>
+              <span class="project__enter">READ &#9654;</span>
+            </a>
+          `).join('');
+        document.querySelectorAll('#postList .card').forEach(el => el.classList.add('is-visible'));
+      })
+      .catch(() => {
+        document.getElementById('postList').innerHTML = '<div class="card"><p class="muted">Could not load posts.</p></div>';
+      });
+  </script>
+</body>
+</html>

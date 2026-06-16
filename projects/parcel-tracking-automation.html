@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Parcel-Tracking &amp; Delay-Notifier — Vaibhav</title>
-  <meta name="description" content="An automated email system that tracks every delivery in flight, sends timely milestone updates, and turns silent delays into early, escalated alerts." />
+  <title>Ops Intelligence Monitor — Vaibhav</title>
+  <meta name="description" content="Event-driven agent that monitors live operational data, detects SLA breaches and anomalies, and fires smart escalations before issues surface as complaints." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
@@ -24,40 +24,40 @@
 
   <main class="pdetail">
     <section class="phero">
-      <span class="pcat reveal">04 &middot; AI Agents / Automation</span>
-      <h1 class="ptitle reveal" data-delay="1">Parcel-Tracking &amp; Delay-Notifier Automation</h1>
-      <p class="pone reveal" data-delay="2">Tracks every delivery a customer has in flight, sends timely milestone updates, and proactively flags delays.</p>
+      <span class="pcat reveal">03 &middot; AI Agents / Automation</span>
+      <h1 class="ptitle reveal" data-delay="1">Ops Intelligence Monitor</h1>
+      <p class="pone reveal" data-delay="2">Event-driven agent that tracks live operational state, detects SLA breaches and anomalies, and fires smart escalations before issues surface as complaints.</p>
       <ul class="ptags reveal" data-delay="3">
-        <li>Automation</li><li>Carrier APIs</li><li>Email</li><li>Delay Alerts</li><li>Escalation</li>
+        <li>Python</li><li>State Machine</li><li>LLM</li><li>Webhooks</li><li>Escalation</li>
       </ul>
     </section>
 
     <section class="pblock reveal">
       <h2>The Problem</h2>
-      <div class="card">Keeping customers updated on shipment status meant someone manually checking tracking and writing update emails. It didn't scale, updates were often late or missed, and worse — delays usually surfaced too late, often only when a customer complained.</div>
+      <div class="card">Keeping stakeholders informed on fast-moving operational events meant someone manually checking status and writing updates. It didn't scale, communications were often late or missed, and worse — issues surfaced only when a stakeholder complained, by which point the window to act had already closed.</div>
     </section>
 
     <section class="pblock reveal">
       <h2>What I Built</h2>
-      <p>An automated email system that monitors the delivery status of everything a customer is working on and triggers the right communication automatically. On a routine milestone (picked up, in transit, out for delivery, delivered) it sends a timely, personalized update. When a shipment <strong>slips its ETA or hits an exception</strong>, it sends a proactive delay alert to the customer and <strong>escalates to the internal team</strong> so someone can act before it becomes a complaint. Status is tracked per shipment, so each event is communicated exactly once.</p>
+      <p>An event-driven monitoring agent that polls live data sources, tracks state changes for every active item, and triggers the right communication automatically. On a routine status transition it sends a timely, personalised update. When something <strong>breaches its SLA or hits an exception</strong>, it fires a proactive alert to the stakeholder and <strong>escalates to the internal team</strong> — giving them time to act before it becomes a complaint. Each event is communicated exactly once; no duplicate noise.</p>
     </section>
 
     <section class="pblock reveal">
       <h2>How It Works</h2>
       <div class="pflow">
-        <div class="pstep"><b>1 · POLL</b><span>Poll carrier APIs for every active shipment.</span></div>
-        <div class="pstep"><b>2 · COMPARE</b><span>Compare each shipment to its last known state.</span></div>
-        <div class="pstep"><b>3 · NOTIFY</b><span>Send a personalized milestone update — exactly once.</span></div>
-        <div class="pstep"><b>4 · ESCALATE</b><span>On ETA slip/exception, alert customer + escalate internally.</span></div>
+        <div class="pstep"><b>1 · POLL</b><span>Poll live data sources for every active item.</span></div>
+        <div class="pstep"><b>2 · DIFF</b><span>Compare each item against its last known state.</span></div>
+        <div class="pstep"><b>3 · NOTIFY</b><span>Send personalised status updates — exactly once per event.</span></div>
+        <div class="pstep"><b>4 · ESCALATE</b><span>On SLA breach or exception, alert stakeholder + escalate internally.</span></div>
       </div>
     </section>
 
     <section class="pblock reveal">
       <h2>Why It Matters</h2>
       <ul class="pwhy">
-        <li>Customers stay informed at every milestone without manual effort.</li>
-        <li>Delays become early, actionable warnings instead of silent failures.</li>
-        <li>Internal teams are escalated in time to act, protecting the relationship.</li>
+        <li>Stakeholders stay informed at every milestone without manual effort.</li>
+        <li>SLA breaches become early, actionable warnings instead of silent failures.</li>
+        <li>Internal teams are escalated in time to act, protecting relationships.</li>
         <li>Eliminates a recurring, low-value manual task and the cost of late surprises.</li>
       </ul>
     </section>
@@ -65,12 +65,12 @@
     <section class="pblock reveal">
       <h2>Tech Stack</h2>
       <ul class="pstack">
-        <li>Carrier APIs</li><li>Status state machine</li><li>ETA/SLA delay detection</li><li>LLM-worded emails</li><li>Email API</li><li>Escalation</li>
+        <li>Python polling loop</li><li>State machine</li><li>SLA / ETA detection</li><li>LLM-generated messages</li><li>Webhook / email delivery</li><li>Escalation routing</li>
       </ul>
     </section>
 
     <div class="pcta reveal">
-      <p class="lead">Want proactive customer comms on autopilot?</p>
+      <p class="lead">Want proactive stakeholder comms on autopilot?</p>
       <a href="https://instagram.com/vaibhavjain.tech" target="_blank" rel="noopener" class="btn btn--ig">&#9654; DM @vaibhavjain.tech</a>
     </div>
   </main>

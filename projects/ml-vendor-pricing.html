@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ML Vendor-Price Prediction — Vaibhav</title>
-  <meta name="description" content="Gradient-boosted machine-learning models that forecast raw-material prices so a US contract manufacturer can quote contracts with confidence." />
+  <title>Predictive Forecasting Pipeline — Vaibhav</title>
+  <meta name="description" content="Gradient-boosted forecasting pipeline that converts structured historical data into defensible forward projections, served via API for real-time decision support." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
@@ -25,39 +25,40 @@
   <main class="pdetail">
     <section class="phero">
       <span class="pcat reveal">02 &middot; Machine Learning</span>
-      <h1 class="ptitle reveal" data-delay="1">ML Vendor-Price Prediction: US Contract Manufacturer</h1>
-      <p class="pone reveal" data-delay="2">A machine-learning model that predicts raw-material prices so a US contract manufacturer can quote contracts with confidence.</p>
+      <h1 class="ptitle reveal" data-delay="1">Predictive Forecasting Pipeline</h1>
+      <p class="pone reveal" data-delay="2">A gradient-boosted forecasting pipeline that converts structured historical data into confident, defensible forward projections — served via API for real-time decision support.</p>
       <ul class="ptags reveal" data-delay="3">
-        <li>XGBoost</li><li>Forecasting</li><li>Feature Engineering</li><li>scikit-learn</li><li>Pricing</li>
+        <li>XGBoost</li><li>Time Series</li><li>Feature Engineering</li><li>scikit-learn</li><li>FastAPI</li>
       </ul>
     </section>
 
     <section class="pblock reveal">
       <h2>The Problem</h2>
-      <div class="card">A US contract manufacturer needed to project the price of raw materials when bidding and quoting on contracts. Pricing was largely manual and estimate-based, which made quotes risky: under-quote and you lose margin, over-quote and you lose the deal.</div>
+      <div class="card">Organisations that price contracts or make procurement decisions by gut-feel expose themselves to margin risk. Manual estimates are inconsistent, hard to defend, and impossible to audit — under-estimate and you lose margin, over-estimate and you lose the deal.</div>
     </section>
 
     <section class="pblock reveal">
       <h2>What I Built</h2>
-      <p>Machine-learning models that forecast vendor and material prices — turning a gut-feel estimate into a data-driven projection. I engineered features from the manufacturer's historical pricing and materials data (material, shape, order volume, product type) and trained <strong>gradient-boosted</strong> models, validated with cross-validation, to surface a defensible price projection for each material.</p>
+      <p>A machine-learning pipeline that forecasts future values from structured historical data — turning gut-feel estimates into repeatable, data-driven projections. I engineered features from historical records, trained <strong>gradient-boosted models</strong> with rigorous cross-validation, and exposed the predictions via a low-latency FastAPI endpoint so any downstream tool can query a defensible forecast on demand.</p>
     </section>
 
     <section class="pblock reveal">
       <h2>How It Works</h2>
       <div class="pflow">
-        <div class="pstep"><b>1 · DATA</b><span>Collect historical vendor &amp; material pricing data.</span></div>
-        <div class="pstep"><b>2 · FEATURES</b><span>Engineer the real cost drivers: material, shape, volume, product type.</span></div>
+        <div class="pstep"><b>1 · INGEST</b><span>Collect and normalise structured historical records.</span></div>
+        <div class="pstep"><b>2 · FEATURES</b><span>Engineer the real signal drivers from raw tabular data.</span></div>
         <div class="pstep"><b>3 · TRAIN</b><span>Train &amp; cross-validate gradient-boosted models.</span></div>
-        <div class="pstep"><b>4 · SERVE</b><span>Serve a defensible price projection via API.</span></div>
+        <div class="pstep"><b>4 · SERVE</b><span>Surface defensible predictions via low-latency API.</span></div>
       </div>
     </section>
 
     <section class="pblock reveal">
       <h2>Why It Matters</h2>
       <ul class="pwhy">
-        <li>Helps the manufacturer project material pricing before committing to a contract.</li>
-        <li>Supports more accurate quoting and bidding, protecting margin.</li>
-        <li>Replaces manual guesswork with a repeatable, data-driven forecast.</li>
+        <li>Converts gut-feel estimates into repeatable, auditable forecasts.</li>
+        <li>Supports confident decisions before committing to contracts or purchases.</li>
+        <li>API-served predictions integrate directly into existing workflows.</li>
+        <li>Replaces expensive manual guesswork with a maintainable ML system.</li>
       </ul>
     </section>
 
@@ -69,7 +70,7 @@
     </section>
 
     <div class="pcta reveal">
-      <p class="lead">Have pricing or forecasting that's still a guess?</p>
+      <p class="lead">Have decisions that are still based on gut feel?</p>
       <a href="https://instagram.com/vaibhavjain.tech" target="_blank" rel="noopener" class="btn btn--ig">&#9654; DM @vaibhavjain.tech</a>
     </div>
   </main>
