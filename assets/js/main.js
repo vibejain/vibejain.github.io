@@ -196,6 +196,28 @@
     tick();
   }
 
+  /* ---- Mobile hamburger ---- */
+  const hamburger = $("#navHamburger");
+  const navLinksEl = $("#navLinks");
+  const mainNav = $("#mainNav");
+  if (hamburger && navLinksEl) {
+    hamburger.addEventListener("click", () => {
+      const open = navLinksEl.classList.toggle("open");
+      document.body.classList.toggle("nav-open", open);
+      hamburger.innerHTML = open ? "&#10005;" : "&#9776;";
+      hamburger.setAttribute("aria-expanded", String(open));
+      if (SND) SND.click();
+    });
+    $$(".nav__links a").forEach((a) => {
+      a.addEventListener("click", () => {
+        navLinksEl.classList.remove("open");
+        document.body.classList.remove("nav-open");
+        hamburger.innerHTML = "&#9776;";
+        hamburger.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
   /* ---- Scroll progress + nav backdrop ---- */
   const fill = $("#progressFill");
   const navBackdrop = $("#navBackdrop");
@@ -203,7 +225,9 @@
     const h = document.documentElement;
     const max = h.scrollHeight - h.clientHeight;
     if (fill) fill.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + "%";
-    if (navBackdrop) navBackdrop.classList.toggle("visible", h.scrollTop > 60);
+    const scrolled = h.scrollTop > 60;
+    if (navBackdrop) navBackdrop.classList.toggle("visible", scrolled);
+    if (mainNav) mainNav.classList.toggle("scrolled", scrolled);
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();

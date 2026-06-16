@@ -96,6 +96,24 @@ a { color: inherit; }
 .nav__cta.is-active { color: var(--ink); }
 .nav__cta:hover { transform: translate(-1px,-1px); }
 
+/* ---------- Hamburger button (hidden on desktop) ---------- */
+.nav__hamburger {
+  display: none; margin-left: auto;
+  font-size: 20px; line-height: 1; color: var(--ink);
+  background: var(--card-bg); border: 3px solid var(--ink);
+  padding: 6px 10px; box-shadow: var(--shadow-sm); cursor: pointer;
+}
+.nav__hamburger:active { transform: translate(2px,2px); box-shadow: none; }
+
+/* ---------- Nav scrolled — applied by JS on scroll ---------- */
+.nav.scrolled {
+  background: rgba(246,241,231,.96);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  padding-top: 8px; padding-bottom: 8px;
+  border-bottom: 3px solid var(--ink);
+  box-shadow: 0 4px 0 rgba(32,32,43,.07);
+}
+
 /* ---------- Layout ---------- */
 main { max-width: var(--maxw); margin: 0 auto; padding: 0 20px 40px; }
 .section { padding: 60px 0 10px; }
@@ -598,13 +616,49 @@ body.crt-off .scanlines { opacity: 0; }
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 620px) {
+@media (max-width: 640px) {
   body { font-size: 20px; }
-  .nav { justify-content: center; }
-  .nav__links { gap: 10px; }
-  .nav__links a { font-size: 9px; }
+
+  /* Nav: single row with hamburger */
+  .nav {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    margin-top: 4px;
+  }
+  .nav__hamburger { display: flex; align-items: center; }
+
+  /* Mobile menu overlay */
+  .nav__links {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    background: var(--cream);
+    border-bottom: 3px solid var(--ink);
+    z-index: 200;
+    padding: 80px 24px 40px;
+  }
+  .nav__links.open { display: flex; }
+  .nav__links a {
+    font-size: 14px;
+    padding: 10px 20px;
+    border-bottom: 2px solid transparent;
+    width: 100%; text-align: center;
+  }
+  .nav__cta { padding: 12px 20px !important; }
+
+  /* Prevent body scroll when menu open */
+  body.nav-open { overflow: hidden; }
+
   .section__title { font-size: 14px; }
   .section__icon { width: 30px; }
   .card { padding: 20px; }
   .skyline img { width: 56px; }
+  .hero { padding: 20px 0 0; }
 }
