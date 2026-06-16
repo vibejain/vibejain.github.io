@@ -180,7 +180,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 20px 40px; }
 /* pixel skyline */
 .skyline {
   position: relative; display: flex; align-items: flex-end; justify-content: center;
-  gap: 4px; margin-top: 50px; padding-bottom: 0;
+  gap: 4px; margin-top: 50px; padding-bottom: 0; overflow: hidden;
 }
 .skyline img { width: 84px; height: auto; display: block; position: relative; z-index: 2; transition: transform .2s ease; }
 .skyline img:hover { transform: translateY(-8px); }
