@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ML Vendor-Price Prediction — Vaibhav</title>
+  <meta name="description" content="Gradient-boosted machine-learning models that forecast raw-material prices so a US contract manufacturer can quote contracts with confidence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/retro.css" />
+</head>
+<body id="top">
+  <div class="progress" aria-hidden="true"><div class="progress__fill" id="progressFill"></div></div>
+  <canvas id="pollen" class="pollen" aria-hidden="true"></canvas>
+
+  <header class="pnav">
+    <a href="../index.html#projects" class="pnav__back">&#9664; BACK TO WORLD</a>
+    <div class="pnav__audio">
+      <button id="musicBtn" class="ghud__btn" title="Music">&#9834;</button>
+      <button id="sfxBtn" class="ghud__btn" title="Sound effects">SFX</button>
+    </div>
+  </header>
+
+  <main class="pdetail">
+    <section class="phero">
+      <span class="pcat reveal">02 &middot; Machine Learning</span>
+      <h1 class="ptitle reveal" data-delay="1">ML Vendor-Price Prediction: US Contract Manufacturer</h1>
+      <p class="pone reveal" data-delay="2">A machine-learning model that predicts raw-material prices so a US contract manufacturer can quote contracts with confidence.</p>
+      <ul class="ptags reveal" data-delay="3">
+        <li>XGBoost</li><li>Forecasting</li><li>Feature Engineering</li><li>scikit-learn</li><li>Pricing</li>
+      </ul>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>The Problem</h2>
+      <div class="card">A US contract manufacturer needed to project the price of raw materials when bidding and quoting on contracts. Pricing was largely manual and estimate-based, which made quotes risky: under-quote and you lose margin, over-quote and you lose the deal.</div>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>What I Built</h2>
+      <p>Machine-learning models that forecast vendor and material prices — turning a gut-feel estimate into a data-driven projection. I engineered features from the manufacturer's historical pricing and materials data (material, shape, order volume, product type) and trained <strong>gradient-boosted</strong> models, validated with cross-validation, to surface a defensible price projection for each material.</p>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>How It Works</h2>
+      <div class="pflow">
+        <div class="pstep"><b>1 · DATA</b><span>Collect historical vendor &amp; material pricing data.</span></div>
+        <div class="pstep"><b>2 · FEATURES</b><span>Engineer the real cost drivers: material, shape, volume, product type.</span></div>
+        <div class="pstep"><b>3 · TRAIN</b><span>Train &amp; cross-validate gradient-boosted models.</span></div>
+        <div class="pstep"><b>4 · SERVE</b><span>Serve a defensible price projection via API.</span></div>
+      </div>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>Why It Matters</h2>
+      <ul class="pwhy">
+        <li>Helps the manufacturer project material pricing before committing to a contract.</li>
+        <li>Supports more accurate quoting and bidding, protecting margin.</li>
+        <li>Replaces manual guesswork with a repeatable, data-driven forecast.</li>
+      </ul>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>Tech Stack</h2>
+      <ul class="pstack">
+        <li>XGBoost / gradient boosting</li><li>scikit-learn</li><li>pandas</li><li>Feature engineering</li><li>FastAPI serving</li>
+      </ul>
+    </section>
+
+    <div class="pcta reveal">
+      <p class="lead">Have pricing or forecasting that's still a guess?</p>
+      <a href="https://instagram.com/vaibhavjain.tech" target="_blank" rel="noopener" class="btn btn--ig">&#9654; DM @vaibhavjain.tech</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="../index.html#projects" class="pnav__back">&#9664; ALL PROJECTS</a>
+    <p>&copy; <span id="year"></span> Vaibhav — AI Solutions Engineer.</p>
+    <button id="crtToggle" class="footer__toggle" title="Toggle CRT scanlines">CRT: ON</button>
+  </footer>
+
+  <div class="scanlines" id="scanlines" aria-hidden="true"></div>
+  <script src="../assets/js/audio.js"></script>
+  <script src="../assets/js/project.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Outreach Engine — Vaibhav</title>
+  <meta name="description" content="A platform that prospects, writes tailored outreach, auto-generates a visual mockup of the proposed solution, and runs timely, engagement-based follow-ups." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/retro.css" />
+</head>
+<body id="top">
+  <div class="progress" aria-hidden="true"><div class="progress__fill" id="progressFill"></div></div>
+  <canvas id="pollen" class="pollen" aria-hidden="true"></canvas>
+
+  <header class="pnav">
+    <a href="../index.html#projects" class="pnav__back">&#9664; BACK TO WORLD</a>
+    <div class="pnav__audio">
+      <button id="musicBtn" class="ghud__btn" title="Music">&#9834;</button>
+      <button id="sfxBtn" class="ghud__btn" title="Sound effects">SFX</button>
+    </div>
+  </header>
+
+  <main class="pdetail">
+    <section class="phero">
+      <span class="pcat reveal">05 &middot; AI Agents / Generative</span>
+      <h1 class="ptitle reveal" data-delay="1">AI Outreach Engine</h1>
+      <p class="pone reveal" data-delay="2">A platform that prospects, writes tailored outreach, auto-generates a visual mockup of the proposed solution, and runs timely follow-ups.</p>
+      <ul class="ptags reveal" data-delay="3">
+        <li>LLM Research &amp; Copy</li><li>RAG</li><li>AI Image Generation</li><li>Follow-ups</li><li>CRM</li>
+      </ul>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>The Problem</h2>
+      <div class="card">Cold outreach fails when it is generic, and even good leads go cold when no one chases the follow-up. Describing a proposed solution in text also leaves the prospect guessing what the work would actually look like.</div>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>What I Built</h2>
+      <p>A platform that runs outbound end to end. It finds and researches prospects, writes a genuinely tailored message for each one, and then does the part most tools skip: it <strong>auto-generates a visual mockup of the proposed solution</strong> and sends it along, so the client can actually see the work that could be done for them. Engagement is tracked, replies are routed to the CRM as qualified hand-offs, and non-responses move into a timely, cadence-based follow-up so nothing slips.</p>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>How It Works</h2>
+      <div class="pflow">
+        <div class="pstep"><b>1 · RESEARCH</b><span>Find &amp; research prospects from real data.</span></div>
+        <div class="pstep"><b>2 · WRITE</b><span>Write a genuinely tailored message for each.</span></div>
+        <div class="pstep"><b>3 · VISUALIZE</b><span>Auto-generate a visual mockup of the solution.</span></div>
+        <div class="pstep"><b>4 · TRACK</b><span>Send, track engagement, route replies to CRM.</span></div>
+        <div class="pstep"><b>5 · FOLLOW-UP</b><span>Cadence-based follow-ups so nothing slips.</span></div>
+      </div>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>Why It Matters</h2>
+      <ul class="pwhy">
+        <li>Personalized at scale: each message is built from real research, not a blast.</li>
+        <li>The generated mockup helps prospects visualize the solution, which lifts replies.</li>
+        <li>Timely, automated follow-ups mean promising conversations are never dropped.</li>
+        <li>Replaces a manual, inconsistent outbound process with a repeatable system.</li>
+      </ul>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>Tech Stack</h2>
+      <ul class="pstack">
+        <li>LLM research &amp; copy (Claude / Llama)</li><li>RAG over prospect data</li><li>AI image generation (diffusion)</li><li>Email &amp; deliverability</li><li>Follow-up cadence</li><li>CRM integration</li><li>Python / FastAPI</li>
+      </ul>
+    </section>
+
+    <div class="pcta reveal">
+      <p class="lead">Want outbound that personalizes and follows up itself?</p>
+      <a href="https://instagram.com/vaibhavjain.tech" target="_blank" rel="noopener" class="btn btn--ig">&#9654; DM @vaibhavjain.tech</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="../index.html#projects" class="pnav__back">&#9664; ALL PROJECTS</a>
+    <p>&copy; <span id="year"></span> Vaibhav — AI Solutions Engineer.</p>
+    <button id="crtToggle" class="footer__toggle" title="Toggle CRT scanlines">CRT: ON</button>
+  </footer>
+
+  <div class="scanlines" id="scanlines" aria-hidden="true"></div>
+  <script src="../assets/js/audio.js"></script>
+  <script src="../assets/js/project.js"></script>
+</body>
+</html>

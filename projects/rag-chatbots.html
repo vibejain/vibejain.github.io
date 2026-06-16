@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAG-Enabled Chatbots — Vaibhav</title>
+  <meta name="description" content="Retrieval-augmented chatbots that answer from a company's own documents — self-hosted Llama on vLLM plus Anthropic Claude, grounded and deployed end to end." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/retro.css" />
+</head>
+<body id="top">
+  <div class="progress" aria-hidden="true"><div class="progress__fill" id="progressFill"></div></div>
+  <canvas id="pollen" class="pollen" aria-hidden="true"></canvas>
+
+  <header class="pnav">
+    <a href="../index.html#projects" class="pnav__back">&#9664; BACK TO WORLD</a>
+    <div class="pnav__audio">
+      <button id="musicBtn" class="ghud__btn" title="Music">&#9834;</button>
+      <button id="sfxBtn" class="ghud__btn" title="Sound effects">SFX</button>
+    </div>
+  </header>
+
+  <main class="pdetail">
+    <section class="phero">
+      <span class="pcat reveal">01 &middot; AI / LLM</span>
+      <h1 class="ptitle reveal" data-delay="1">RAG-Enabled Chatbots: Self-Hosted &amp; Cloud LLMs</h1>
+      <p class="pone reveal" data-delay="2">Chatbots that answer from a company's own documents and data — grounded, accurate, and deployed end to end.</p>
+      <ul class="ptags reveal" data-delay="3">
+        <li>RAG</li><li>Llama on vLLM</li><li>Anthropic Claude</li><li>Qdrant</li><li>Embeddings</li><li>Self-Hosting</li>
+      </ul>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>The Problem</h2>
+      <div class="card">Off-the-shelf LLMs don't know a company's internal knowledge, and sending sensitive data to a third party isn't always acceptable. Teams needed a chatbot that answered from <strong>their</strong> documents — reliably, without leaking data or hallucinating.</div>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>What I Built</h2>
+      <p>A retrieval-augmented generation (RAG) system with a deliberate <strong>dual-model strategy</strong>:</p>
+      <p><strong>Self-hosted Llama (served on vLLM, RunPod GPU pods)</strong> for data-sensitive, cost-controlled workloads — so private data never has to leave the environment. <strong>Anthropic Claude API</strong> for tasks that needed stronger reasoning and higher-quality generation. Responses are tied back to source context to keep answers trustworthy and reduce hallucination.</p>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>How It Works</h2>
+      <div class="pflow">
+        <div class="pstep"><b>1 · INGEST</b><span>Ingest &amp; chunk source documents.</span></div>
+        <div class="pstep"><b>2 · EMBED</b><span>Generate embeddings, store them in Qdrant vector DB.</span></div>
+        <div class="pstep"><b>3 · RETRIEVE</b><span>On each query, retrieve the most relevant context.</span></div>
+        <div class="pstep"><b>4 · GROUND</b><span>Pass context to Llama or Claude for a grounded answer.</span></div>
+      </div>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>Why It Matters</h2>
+      <ul class="pwhy">
+        <li>Keeps sensitive data in-house via self-hosting where required.</li>
+        <li>Answers are grounded in real documents, not generic model memory.</li>
+        <li>Flexible model routing balances cost, privacy, and reasoning quality.</li>
+      </ul>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>Tech Stack</h2>
+      <ul class="pstack">
+        <li>Qdrant</li><li>Llama on vLLM / RunPod</li><li>Anthropic Claude</li><li>FastAPI</li><li>React</li><li>Embeddings</li><li>Docker / VPS</li>
+      </ul>
+    </section>
+
+    <div class="pcta reveal">
+      <p class="lead">Want a grounded chatbot over your own docs?</p>
+      <a href="https://instagram.com/vaibhavjain.tech" target="_blank" rel="noopener" class="btn btn--ig">&#9654; DM @vaibhavjain.tech</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="../index.html#projects" class="pnav__back">&#9664; ALL PROJECTS</a>
+    <p>&copy; <span id="year"></span> Vaibhav — AI Solutions Engineer.</p>
+    <button id="crtToggle" class="footer__toggle" title="Toggle CRT scanlines">CRT: ON</button>
+  </footer>
+
+  <div class="scanlines" id="scanlines" aria-hidden="true"></div>
+  <script src="../assets/js/audio.js"></script>
+  <script src="../assets/js/project.js"></script>
+</body>
+</html>

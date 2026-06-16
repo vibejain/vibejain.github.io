@@ -1,0 +1,7 @@
+User-agent: *
+# Block personal/private content from search indexing
+Disallow: /resume/
+Disallow: /*.pdf$
+
+# Allow everything else
+Allow: /

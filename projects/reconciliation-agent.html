@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reconciliation-Report Agent — Vaibhav</title>
+  <meta name="description" content="An AI agent that matches records across systems with a layered rule + fuzzy + LLM engine, keeps a human in the loop, and writes the reconciliation report automatically." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/retro.css" />
+</head>
+<body id="top">
+  <div class="progress" aria-hidden="true"><div class="progress__fill" id="progressFill"></div></div>
+  <canvas id="pollen" class="pollen" aria-hidden="true"></canvas>
+
+  <header class="pnav">
+    <a href="../index.html#projects" class="pnav__back">&#9664; BACK TO WORLD</a>
+    <div class="pnav__audio">
+      <button id="musicBtn" class="ghud__btn" title="Music">&#9834;</button>
+      <button id="sfxBtn" class="ghud__btn" title="Sound effects">SFX</button>
+    </div>
+  </header>
+
+  <main class="pdetail">
+    <section class="phero">
+      <span class="pcat reveal">03 &middot; AI Agents / Automation</span>
+      <h1 class="ptitle reveal" data-delay="1">Reconciliation-Report Agent</h1>
+      <p class="pone reveal" data-delay="2">An AI agent that reconciles records across systems and writes the report staff used to assemble by hand.</p>
+      <ul class="ptags reveal" data-delay="3">
+        <li>AI Agents</li><li>Layered Matching</li><li>Human-in-the-loop</li><li>Reporting</li><li>Back-Office</li>
+      </ul>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>The Problem</h2>
+      <div class="card">Reconciliation — the work of matching and cross-checking records across systems — was a repetitive, time-consuming, and error-prone task done manually by the team every cycle.</div>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>What I Built</h2>
+      <p>A <strong>layered matching engine</strong>: rules clear the obvious matches, fuzzy matching handles near-matches, and an <strong>LLM is used only for the genuinely ambiguous</strong> pairs. Only true discrepancies reach a human for a one-click confirm/dismiss — and every decision refines the rules. An LLM then drafts the finished reconciliation summary, delivered on a schedule.</p>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>How It Works</h2>
+      <div class="pflow">
+        <div class="pstep"><b>1 · RULES</b><span>Rules clear the obvious matches instantly.</span></div>
+        <div class="pstep"><b>2 · FUZZY</b><span>Fuzzy matching handles the near-matches.</span></div>
+        <div class="pstep"><b>3 · LLM</b><span>LLM resolves only the genuinely ambiguous pairs.</span></div>
+        <div class="pstep"><b>4 · HUMAN</b><span>True discrepancies get a one-click confirm/dismiss.</span></div>
+        <div class="pstep"><b>5 · REPORT</b><span>LLM drafts &amp; delivers the report on schedule.</span></div>
+      </div>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>Why It Matters</h2>
+      <ul class="pwhy">
+        <li>Removes a repetitive, manual admin task.</li>
+        <li>Reduces human error in matching and cross-checking.</li>
+        <li>Frees staff for higher-value work.</li>
+      </ul>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>Tech Stack</h2>
+      <ul class="pstack">
+        <li>Rule + fuzzy + LLM matching</li><li>Human-in-the-loop</li><li>LLM reporting</li><li>Python / pandas</li><li>Scheduled jobs</li>
+      </ul>
+    </section>
+
+    <div class="pcta reveal">
+      <p class="lead">Got a recurring back-office grind to automate?</p>
+      <a href="https://instagram.com/vaibhavjain.tech" target="_blank" rel="noopener" class="btn btn--ig">&#9654; DM @vaibhavjain.tech</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="../index.html#projects" class="pnav__back">&#9664; ALL PROJECTS</a>
+    <p>&copy; <span id="year"></span> Vaibhav — AI Solutions Engineer.</p>
+    <button id="crtToggle" class="footer__toggle" title="Toggle CRT scanlines">CRT: ON</button>
+  </footer>
+
+  <div class="scanlines" id="scanlines" aria-hidden="true"></div>
+  <script src="../assets/js/audio.js"></script>
+  <script src="../assets/js/project.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parcel-Tracking &amp; Delay-Notifier — Vaibhav</title>
+  <meta name="description" content="An automated email system that tracks every delivery in flight, sends timely milestone updates, and turns silent delays into early, escalated alerts." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/retro.css" />
+</head>
+<body id="top">
+  <div class="progress" aria-hidden="true"><div class="progress__fill" id="progressFill"></div></div>
+  <canvas id="pollen" class="pollen" aria-hidden="true"></canvas>
+
+  <header class="pnav">
+    <a href="../index.html#projects" class="pnav__back">&#9664; BACK TO WORLD</a>
+    <div class="pnav__audio">
+      <button id="musicBtn" class="ghud__btn" title="Music">&#9834;</button>
+      <button id="sfxBtn" class="ghud__btn" title="Sound effects">SFX</button>
+    </div>
+  </header>
+
+  <main class="pdetail">
+    <section class="phero">
+      <span class="pcat reveal">04 &middot; AI Agents / Automation</span>
+      <h1 class="ptitle reveal" data-delay="1">Parcel-Tracking &amp; Delay-Notifier Automation</h1>
+      <p class="pone reveal" data-delay="2">Tracks every delivery a customer has in flight, sends timely milestone updates, and proactively flags delays.</p>
+      <ul class="ptags reveal" data-delay="3">
+        <li>Automation</li><li>Carrier APIs</li><li>Email</li><li>Delay Alerts</li><li>Escalation</li>
+      </ul>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>The Problem</h2>
+      <div class="card">Keeping customers updated on shipment status meant someone manually checking tracking and writing update emails. It didn't scale, updates were often late or missed, and worse — delays usually surfaced too late, often only when a customer complained.</div>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>What I Built</h2>
+      <p>An automated email system that monitors the delivery status of everything a customer is working on and triggers the right communication automatically. On a routine milestone (picked up, in transit, out for delivery, delivered) it sends a timely, personalized update. When a shipment <strong>slips its ETA or hits an exception</strong>, it sends a proactive delay alert to the customer and <strong>escalates to the internal team</strong> so someone can act before it becomes a complaint. Status is tracked per shipment, so each event is communicated exactly once.</p>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>How It Works</h2>
+      <div class="pflow">
+        <div class="pstep"><b>1 · POLL</b><span>Poll carrier APIs for every active shipment.</span></div>
+        <div class="pstep"><b>2 · COMPARE</b><span>Compare each shipment to its last known state.</span></div>
+        <div class="pstep"><b>3 · NOTIFY</b><span>Send a personalized milestone update — exactly once.</span></div>
+        <div class="pstep"><b>4 · ESCALATE</b><span>On ETA slip/exception, alert customer + escalate internally.</span></div>
+      </div>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>Why It Matters</h2>
+      <ul class="pwhy">
+        <li>Customers stay informed at every milestone without manual effort.</li>
+        <li>Delays become early, actionable warnings instead of silent failures.</li>
+        <li>Internal teams are escalated in time to act, protecting the relationship.</li>
+        <li>Eliminates a recurring, low-value manual task and the cost of late surprises.</li>
+      </ul>
+    </section>
+
+    <section class="pblock reveal">
+      <h2>Tech Stack</h2>
+      <ul class="pstack">
+        <li>Carrier APIs</li><li>Status state machine</li><li>ETA/SLA delay detection</li><li>LLM-worded emails</li><li>Email API</li><li>Escalation</li>
+      </ul>
+    </section>
+
+    <div class="pcta reveal">
+      <p class="lead">Want proactive customer comms on autopilot?</p>
+      <a href="https://instagram.com/vaibhavjain.tech" target="_blank" rel="noopener" class="btn btn--ig">&#9654; DM @vaibhavjain.tech</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="../index.html#projects" class="pnav__back">&#9664; ALL PROJECTS</a>
+    <p>&copy; <span id="year"></span> Vaibhav — AI Solutions Engineer.</p>
+    <button id="crtToggle" class="footer__toggle" title="Toggle CRT scanlines">CRT: ON</button>
+  </footer>
+
+  <div class="scanlines" id="scanlines" aria-hidden="true"></div>
+  <script src="../assets/js/audio.js"></script>
+  <script src="../assets/js/project.js"></script>
+</body>
+</html>

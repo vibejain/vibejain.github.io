@@ -1,0 +1,28 @@
+# Vaibhav — AI Solutions Engineer & Implementation Partner
+
+> I design and ship production AI/ML systems on a strong full-stack foundation:
+> RAG chatbots, predictive ML models, and AI agents that automate the operations
+> and admin work companies usually do by hand. I own problems end to end —
+> scope, build, host, ship.
+
+## About
+AI Solutions Engineer with 3–5 years building and shipping production AI/ML
+systems. Pragmatic about cost and privacy (self-hosted models where it matters,
+APIs where they earn their keep), with a strong eye for UX. AI-native workflow:
+Claude + Cursor.
+
+## Skills
+- AI & LLMs: RAG, self-hosted Llama on vLLM, Anthropic Claude API, embeddings, Qdrant, prompting, grounding
+- AI Agents & Automation: agentic workflows, layered matching, human-in-the-loop, automated reporting, event notifications
+- Machine Learning: XGBoost / gradient boosting, forecasting, feature engineering, cross-validation
+- Engineering & Infra: Python, FastAPI, JS/TS, React, Node.js, Docker, Nginx, RunPod GPU pods, VPS
+
+## Projects
+- RAG-Enabled Chatbots (AI / LLM): /projects/rag-chatbots.html
+- ML Vendor-Price Prediction (Machine Learning): /projects/ml-vendor-pricing.html
+- Reconciliation-Report Agent (AI Agents): /projects/reconciliation-agent.html
+- Parcel-Tracking & Delay-Notifier (Automation): /projects/parcel-tracking-automation.html
+- AI Outreach Engine (Generative): /projects/outreach-engine.html
+
+## Contact
+- Instagram (preferred): https://instagram.com/vaibhavjain.tech  (@vaibhavjain.tech)

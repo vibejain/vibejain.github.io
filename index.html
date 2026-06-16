@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaibhav — AI Solutions Engineer</title>
+  <meta name="description" content="Vaibhav — AI Solutions Engineer & Implementation Partner. I build RAG chatbots, ML models, and AI agents that automate real business work, end to end." />
+  <meta property="og:title" content="Vaibhav — AI Solutions Engineer" />
+  <meta property="og:description" content="RAG chatbots, ML forecasting, and AI agents — scoped, built, and shipped end to end." />
+  <meta property="og:image" content="assets/img/avatar.png" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/retro.css" />
+</head>
+<body id="top">
+  <div class="progress" aria-hidden="true"><div class="progress__fill" id="progressFill"></div></div>
+  <canvas id="pollen" class="pollen" aria-hidden="true"></canvas>
+
+  <!-- ===== GAME HUD ===== -->
+  <aside class="ghud" id="ghud">
+    <img class="ghud__avatar" src="assets/img/avatar.png" alt="Vaibhav" />
+    <div class="ghud__stat">
+      <span class="ghud__k">SCORE</span>
+      <b id="score">0</b>
+    </div>
+    <div class="ghud__stat">
+      <span class="ghud__k">LVL <b id="glevel">1</b></span>
+      <div class="ghud__xp"><div class="ghud__xpfill" id="gxp"></div></div>
+    </div>
+    <div class="ghud__btns">
+      <button id="musicBtn" class="ghud__btn" title="Music">&#9834;</button>
+      <button id="sfxBtn" class="ghud__btn" title="Sound effects">SFX</button>
+    </div>
+  </aside>
+
+  <button id="soundStart" class="sound-start">&#9834; TAP FOR SOUND</button>
+
+  <div class="achv" id="achv" role="status" aria-live="polite">
+    <span class="achv__badge">&#9733;</span>
+    <div class="achv__txt">
+      <b id="achvTitle">Achievement</b>
+      <span id="achvDesc">unlocked</span>
+    </div>
+  </div>
+
+  <div class="levelup" id="levelup"><span>LEVEL&nbsp;UP!</span><b id="levelupNum">2</b></div>
+
+  <!-- Navbar scroll backdrop -->
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a href="#top" class="nav__logo" id="logo"><span class="nav__dot"></span> VAIBHAV</a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#about" data-spy="about">ABOUT</a>
+      <a href="#skills" data-spy="skills">SKILLS</a>
+      <a href="#projects" data-spy="projects">PROJECTS</a>
+      <a href="#contact" data-spy="contact" class="nav__cta">CONTACT</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero__grid">
+        <div class="hero__inner">
+          <p class="hero__kicker reveal">// AI SOLUTIONS ENGINEER &middot; IMPLEMENTATION PARTNER</p>
+          <h1 class="hero__title reveal" data-delay="1">
+            I turn <span class="accent">AI</span> into<br />
+            <span id="typewriter" class="type">shipped systems.</span>
+          </h1>
+          <p class="hero__lede reveal" data-delay="2">
+            I design and ship production AI/ML systems on a strong full-stack
+            foundation — RAG chatbots, predictive ML models, and AI agents that
+            automate the work companies grind through by hand. I own the problem
+            end to end: scope, build, host, ship.
+          </p>
+          <div class="hero__actions reveal" data-delay="3">
+            <a href="#projects" class="btn btn--primary">VIEW PROJECTS &#9654;</a>
+            <a href="https://instagram.com/vaibhavjain.tech" target="_blank" rel="noopener" class="btn btn--ghost">DM ON INSTAGRAM</a>
+          </div>
+          <ul class="stats reveal" data-delay="4">
+            <li><strong>5+</strong><span>AI systems shipped</span></li>
+            <li><strong>E2E</strong><span>scope → host → ship</span></li>
+            <li><strong>3–5 yrs</strong><span>building software</span></li>
+          </ul>
+        </div>
+
+        <!-- pixel character portrait -->
+        <div class="hero__char reveal" data-delay="2">
+          <div class="portrait">
+            <img src="assets/img/avatar.png" alt="Pixel portrait of Vaibhav" />
+            <div class="portrait__plate">VAIBHAV &middot; Lv.99</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- pixel skyline -->
+      <div class="skyline" aria-hidden="true">
+        <img src="assets/img/tiles/tree.png" class="skyline__tree" alt="" />
+        <img src="assets/img/tiles/bld_about.png" alt="" />
+        <img src="assets/img/tiles/bld_skills.png" alt="" />
+        <img src="assets/img/tiles/bld_projects.png" alt="" />
+        <img src="assets/img/tiles/bld_contact.png" alt="" />
+        <img src="assets/img/tiles/lamp.png" class="skyline__lamp" alt="" />
+        <div class="skyline__ground"></div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section">
+      <h2 class="section__title reveal">
+        <img src="assets/img/tiles/bld_about.png" class="section__icon" alt="" />
+        <span class="section__num">01</span> ABOUT
+      </h2>
+      <div class="card reveal" data-delay="1">
+        <p class="lead">I'm <strong>Vaibhav</strong> — an AI Solutions Engineer who turns ambiguous business problems into AI systems people actually adopt.</p>
+        <p>I build <strong>RAG-enabled chatbots</strong> (self-hosted Llama on vLLM plus Anthropic Claude), predictive <strong>machine-learning models</strong>, and <strong>AI agents</strong> that automate the operations and admin work companies usually do by hand — up to a full generative <strong>AI outreach platform</strong>.</p>
+        <p>Because I come from a strong <strong>full-stack development and hosting</strong> background, I can scope, build, deploy, and run the whole thing — pragmatic about cost and privacy (self-hosted models where it matters, APIs where they earn their keep), with a genuine eye for UX.</p>
+        <p class="muted">Day to day I work in an AI-native workflow: <strong>Claude + Cursor</strong>.</p>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section">
+      <h2 class="section__title reveal">
+        <img src="assets/img/tiles/bld_skills.png" class="section__icon" alt="" />
+        <span class="section__num">02</span> SKILLS
+      </h2>
+      <!-- Mario sprite scene -->
+      <div class="sprite-scene reveal" data-delay="1" aria-hidden="true">
+        <div class="sprite-scene__ground"></div>
+        <img class="sprite-scene__qblock" src="assets/img/sprites/qblock.png" alt="">
+        <img class="sprite-scene__coin" src="assets/img/sprites/coin.png" alt="">
+        <div class="ssc-wrap ssc-wrap--mario">
+          <div class="ssc-char ssc-char--r0"></div>
+        </div>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card skill reveal" data-delay="1">
+          <h3>AI &amp; LLMs</h3>
+          <ul class="tags"><li>RAG</li><li>Llama on vLLM</li><li>Claude API</li><li>Embeddings</li><li>Qdrant</li><li>Prompting</li><li>Grounding</li></ul>
+        </div>
+        <div class="card skill reveal" data-delay="2">
+          <h3>AI Agents &amp; Automation</h3>
+          <ul class="tags"><li>Agentic workflows</li><li>Layered matching</li><li>Human-in-the-loop</li><li>Automated reporting</li><li>Event notifications</li></ul>
+        </div>
+        <div class="card skill reveal" data-delay="3">
+          <h3>Machine Learning</h3>
+          <ul class="tags"><li>XGBoost</li><li>Forecasting</li><li>Feature engineering</li><li>Cross-validation</li><li>scikit-learn</li></ul>
+        </div>
+        <div class="card skill reveal" data-delay="4">
+          <h3>Engineering &amp; Infra</h3>
+          <ul class="tags"><li>Python</li><li>FastAPI</li><li>JS / TS</li><li>React</li><li>Node.js</li><li>Docker</li><li>Nginx</li><li>RunPod / VPS</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section">
+      <h2 class="section__title reveal">
+        <img src="assets/img/tiles/bld_projects.png" class="section__icon" alt="" />
+        <span class="section__num">03</span> PROJECTS
+      </h2>
+      <p class="section__hint reveal" data-delay="1">Click a card to enter the project &#9654;</p>
+
+      <!-- Character walker across projects section -->
+      <div class="sprite-scene sprite-scene--slim reveal" data-delay="1" aria-hidden="true">
+        <div class="sprite-scene__ground"></div>
+        <div class="ssc-wrap ssc-wrap--walker">
+          <div class="ssc-char ssc-char--r1"></div>
+        </div>
+      </div>
+
+      <div class="grid grid--bento">
+
+        <!-- ── QUEST 01 ── -->
+        <a class="card project reveal" data-delay="1" href="projects/rag-chatbots.html">
+          <div class="project__thumb project__thumb--rag" data-label="01 · AI / LLM"></div>
+          <div class="project__meta">
+            <span class="project__quest">&#11042; QUEST 01</span>
+            <span class="project__xp">+75 XP</span>
+          </div>
+          <h3>RAG-Enabled Chatbots</h3>
+          <p>Chatbots that answer from a company's own documents — grounded, private, and deployed end to end with self-hosted Llama + Claude.</p>
+          <div class="project__diff">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
+          <ul class="tags tags--sm"><li>RAG</li><li>Llama</li><li>Claude</li><li>Qdrant</li></ul>
+          <span class="project__status">&#10003; COMPLETED</span>
+          <span class="project__enter">ENTER &#9654;</span>
+        </a>
+
+        <!-- ── QUEST 02 ── -->
+        <a class="card project reveal" data-delay="2" href="projects/ml-vendor-pricing.html">
+          <div class="project__thumb project__thumb--ml" data-label="02 · Machine Learning"></div>
+          <div class="project__meta">
+            <span class="project__quest">&#11042; QUEST 02</span>
+            <span class="project__xp">+60 XP</span>
+          </div>
+          <h3>ML Vendor-Price Prediction</h3>
+          <p>Gradient-boosted models that forecast raw-material prices so a US contract manufacturer can quote with confidence.</p>
+          <div class="project__diff">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+          <ul class="tags tags--sm"><li>XGBoost</li><li>Forecasting</li><li>Feature Eng.</li></ul>
+          <span class="project__status">&#10003; COMPLETED</span>
+          <span class="project__enter">ENTER &#9654;</span>
+        </a>
+
+        <!-- ── QUEST 03 ── -->
+        <a class="card project reveal" data-delay="1" href="projects/parcel-tracking-automation.html">
+          <div class="project__thumb project__thumb--parcel" data-label="04 · Automation"></div>
+          <div class="project__meta">
+            <span class="project__quest">&#11042; QUEST 03</span>
+            <span class="project__xp">+50 XP</span>
+          </div>
+          <h3>Parcel-Tracking &amp; Delay-Notifier</h3>
+          <p>Tracks every delivery in flight, sends timely milestone updates, and turns silent delays into early, escalated alerts.</p>
+          <div class="project__diff">&#9733;&#9733;&#9734;&#9734;&#9734;</div>
+          <ul class="tags tags--sm"><li>Automation</li><li>Carrier APIs</li><li>Email</li></ul>
+          <span class="project__status">&#10003; COMPLETED</span>
+          <span class="project__enter">ENTER &#9654;</span>
+        </a>
+
+        <!-- ── QUEST 04 ── -->
+        <a class="card project reveal" data-delay="2" href="projects/outreach-engine.html">
+          <div class="project__thumb project__thumb--ai" data-label="05 · Generative"></div>
+          <div class="project__meta">
+            <span class="project__quest">&#11042; QUEST 04</span>
+            <span class="project__xp">+90 XP</span>
+          </div>
+          <h3>AI Outreach Engine</h3>
+          <p>Prospects, writes tailored outreach, auto-generates a visual mockup of the solution, and runs timely follow-ups.</p>
+          <div class="project__diff">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <ul class="tags tags--sm"><li>LLM</li><li>Image gen</li><li>CRM</li></ul>
+          <span class="project__status">&#10003; COMPLETED</span>
+          <span class="project__enter">ENTER &#9654;</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section section--contact">
+      <h2 class="section__title reveal">
+        <img src="assets/img/tiles/bld_contact.png" class="section__icon" alt="" />
+        <span class="section__num">04</span> CONTACT
+      </h2>
+      <div class="card card--center reveal" data-delay="1">
+        <p class="lead">Got a process that should be automated, or want a system like these built?</p>
+        <p class="muted">I reply fastest on Instagram — slide into the DMs.</p>
+        <div class="contact__links">
+          <a href="https://instagram.com/vaibhavjain.tech" target="_blank" rel="noopener" class="btn btn--primary btn--ig">&#9654; DM @vaibhavjain.tech</a>
+        </div>
+        <p class="contact__handle">Instagram: <strong>@vaibhavjain.tech</strong></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/img/tiles/tree.png" class="footer__tree" alt="" />
+    <p>&copy; <span id="year"></span> Vaibhav — AI Solutions Engineer. Built static, hosted on GitHub Pages.</p>
+    <button id="crtToggle" class="footer__toggle" title="Toggle CRT scanlines">CRT: ON</button>
+  </footer>
+
+  <div class="scanlines" id="scanlines" aria-hidden="true"></div>
+  <script src="assets/js/audio.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
